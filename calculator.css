@@ -331,7 +331,7 @@ box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
     /*Position correctly within container*/
     position: absolute;
     top: -9px;
-    right: 4px;
+    right: -11px;
     z-index: 1; /*Set overflow to hidden, to mask inner square*/
     overflow: hidden; /*Set size and add subtle rounding  		to soften edges*/
     width: 100px;
