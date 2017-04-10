@@ -5,7 +5,9 @@
     <link rel="stylesheet" href="calculator.css">
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900" rel="stylesheet">
-    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
@@ -17,11 +19,14 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <script src="https://unpkg.com/vue"></script>
     <script src="calculator.js"></script>
+
 </head>
 
 <body>
+    <label id="app">{{ message }}</label>
     <div class="container">
         <div class="panel panel-success">
             <div class="panel-heading">How do your users authenticate?</div>
