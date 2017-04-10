@@ -12,11 +12,3 @@ function rotateCard(btn) {
         $card.addClass('hover');
     }
 }
-
-//vuejs section
-var app = new Vue({
-  el: '#app',
-  data: {
-    message: 'Hello Vue!'
-  }
-});
