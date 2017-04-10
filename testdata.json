@@ -1,7 +1,4 @@
-//vuejs section
-var app = new Vue({
-    el: '#app',
-    data: {
+{
         "sections": [
             {
                 "section_name": "How do users authenticate",
@@ -30,10 +27,4 @@ var app = new Vue({
                     }]
             }
         ]
-    },
-    methods: {
-        reverseMessage: function () {
-            this.message = this.message.split("").reverse().join("")
-        }
     }
-});
