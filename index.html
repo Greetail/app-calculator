@@ -28,6 +28,7 @@
 
 <body>
     <div id="app" class="container">
+        <button class="button-primary" v-on:click="addQuote()">Save</button>
         <div class="panel panel-success" v-for="section in sections" :key="section['.key']">
             <div class="panel-heading">{{section.section_name}}</div>
             <div class="panel-body">
@@ -44,7 +45,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="card" v-on:click="feature.selected = !feature.selected">
+                                    <div class="card" v-on:click="feature.selected = !feature.selected, manageQuoteFeatures(feature);">
                                         <div class="front">
                                             <div class="cover">
                                                 <img src="https://www.clipartsgram.com/image/124089475-california-beaches-tumblr-wallpaper-3.jpg" />
@@ -127,4 +128,5 @@
     </div>
 </body>
 <script src="app.js"></script>
+
 </html>
