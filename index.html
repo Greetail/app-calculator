@@ -21,29 +21,29 @@
         crossorigin="anonymous"></script>
 
     <script src="https://unpkg.com/vue"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
     <script src="calculator.js"></script>
-
-
 </head>
 
 <body>
     <div id="app" class="container">
-        <div class="panel panel-success" v-for="section in sections">
+        <div class="panel panel-success" v-for="section in sections" :key="section['.key']">
             <div class="panel-heading">{{section.section_name}}</div>
             <div class="panel-body">
                 <div class="well well-lg">
                     <div class="row">
                         <div class="col-sm-10 col-sm-offset-1">
 
-                            <div class="col-md-4 col-sm-6" v-for="feature in section.features">
+                            <div class="col-md-4 col-sm-6" v-for="feature in section.features" :key="feature['.key']">
                                 <div class="card-container manual-flip">
-                                    
-                                    <div class="cnrflash" v-if="feature.selected" >
+
+                                    <div class="cnrflash" v-if="feature.selected">
                                         <div class="cnrflash-inner">
                                             <span class="cnrflash-label">NOW <br> ADDED</span>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="card" v-on:click="feature.selected = !feature.selected">
                                         <div class="front">
                                             <div class="cover">
@@ -127,5 +127,4 @@
     </div>
 </body>
 <script src="app.js"></script>
-
 </html>
