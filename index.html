@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="calculator.css">
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/92c4abe2be.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900" rel="stylesheet">
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -49,11 +50,11 @@
                                         <div class="front">
                                             <div class="cover">
                                                 <img src="https://www.clipartsgram.com/image/124089475-california-beaches-tumblr-wallpaper-3.jpg" />
+                                                <!--<i class="fa fa-envelope fa-5x" aria-hidden="true"></i>-->
                                             </div>
-                                            <!--<div class="user">
-                                                <img class="img-circle" src="https://www.outbrain.com/risingstars/wp-content/uploads/708x708-RS-Profile-Ashley-Callahan-400x400.jpg"
-                                                />
-                                            </div>-->
+                                            <div class="user">                                                
+                                                <i :class="feature.icon" aria-hidden="true"></i>
+                                            </div>
                                             <div class="content">
                                                 <div class="main">
                                                     <h3 class="name">{{feature.name}}</h3>

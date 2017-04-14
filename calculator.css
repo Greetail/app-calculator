@@ -142,6 +142,13 @@ body {
     width: 100%;
 }
 
+.card .user i {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 .card .content {
     background-color: rgba(0, 0, 0, 0);
     box-shadow: none;
