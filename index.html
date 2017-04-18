@@ -46,7 +46,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="card" v-on:click="feature.selected = !feature.selected, manageQuoteFeatures(feature);">
+                                    <div class="card">
                                         <div class="front">
                                             <div class="cover">
                                                 <!--<img src="/images/200x200_OilPaintingOrange.jpg" />-->
@@ -58,58 +58,34 @@
                                             <div class="content">
                                                 <div class="main">
                                                     <h3 class="name">{{feature.name}}</h3>
-                                                    <!--<p class="profession">Web Developer</p>-->
                                                     <p class="text-center">{{feature.description}}</p>
+                                                    <button class="btn btn-success btn-lg btn-block" v-on:click="feature.selected = !feature.selected, manageQuoteFeatures(feature);">
+                                                         <i class="fa fa-check-circle-o fa-2x animated fadeIn" v-if="!feature.selected"></i>
+                                                         <i class="fa trash-o fa-trash-o  fa-2x animated fadeIn" v-if="feature.selected"></i>
+                                                     </button>
                                                 </div>
                                                 <div class="footer">
                                                     <button class="btn btn-simple" onclick="rotateCard(this)">
-                                    <i class="fa fa-mail-forward"></i> Tell me your use case
-                                </button>
+                                                        <i class="fa fa-mail-forward"></i> Tell me more
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- end front panel -->
                                         <div class="back">
                                             <div class="header">
-                                                <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+                                                <h5 class="motto">"Provide as much detail as possible"</h5>
                                             </div>
                                             <div class="content">
                                                 <div class="main">
-                                                    <h4 class="text-center">Job Description</h4>
+                                                    <h4 class="text-center">Description</h4>
                                                     <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
-
-                                                    <div class="stats-container">
-                                                        <div class="stats">
-                                                            <h4>235</h4>
-                                                            <p>
-                                                                Followers
-                                                            </p>
-                                                        </div>
-                                                        <div class="stats">
-                                                            <h4>114</h4>
-                                                            <p>
-                                                                Following
-                                                            </p>
-                                                        </div>
-                                                        <div class="stats">
-                                                            <h4>35</h4>
-                                                            <p>
-                                                                Projects
-                                                            </p>
-                                                        </div>
-                                                    </div>
 
                                                 </div>
                                             </div>
                                             <div class="footer">
                                                 <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
-                                <i class="fa fa-reply"></i> Back
-                            </button>
-                                                <div class="social-links text-center">
-                                                    <a href="https://deepak646.blogspot.in/" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-                                                    <a href="https://deepak646.blogspot.in/" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
-                                                    <a href="https://deepak646.blogspot.in/" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
-                                                </div>
+                                                <i class="fa fa-reply"></i> Back                       </button>
                                             </div>
                                         </div>
                                         <!-- end back panel -->

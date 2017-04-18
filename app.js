@@ -23,8 +23,8 @@ var app = new Vue({
     },
     data: {
         newUser: {
-            name: 'jose',
-            email: 'jdelgado@greetail.co'
+            name: '',
+            email: ''
         },
         quote: {
             user: this.newUser,

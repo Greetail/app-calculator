@@ -157,6 +157,13 @@ body {
 
 .card .content .main {
     min-height: 160px;
+    position: relative;
+}
+
+.card .content .main .btn-lg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 .card .back .content .main {
