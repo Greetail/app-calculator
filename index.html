@@ -25,8 +25,6 @@
   <link rel="stylesheet" href="css/main.css">
 
   <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-
-  <link rel="stylesheet" href="calculator.css">
   <link href="https://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="https://use.fontawesome.com/92c4abe2be.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900" rel="stylesheet">
@@ -131,13 +129,13 @@
                       <!-- end front panel -->
                       <div class="back">
                         <div class="header">
-                          <h5 class="motto">"Provide as much detail as possible"</h5>
+                          <h5 class="motto">{{feature.name}}</h5>
                         </div>
                         <div class="content">
                           <div class="main">
-                            <h4 class="text-center">Description</h4>
-                            <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
-
+                            <div class="form-group">
+                              <textarea placeholder="Tell me more about this feature" class="form-control" rows="12" id="comment">{{feature.comment}}</textarea>
+                            </div>
                           </div>
                         </div>
                         <div class="footer">
