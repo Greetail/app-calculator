@@ -491,7 +491,21 @@ pre.prettyprint {
     text-align: center;
 }
 
+.btn-bottom-right
+{ 
+    position: fixed; 
+    bottom: 15px; 
+    right: 15px; 
+}
 
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
 
 
 
