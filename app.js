@@ -55,6 +55,9 @@ var app = new Vue({
         removeFeatureFromQuote: function(feature){
             this.quote.features.splice(this.quote.features.indexOf(feature), 1);
             this.total = this.total - (feature.hours * this.rate);
+        },
+        formatNumber: function(total){
+            total.toLocaleString('en-US',  { style: 'currency', currency: 'USD' });
         }
     }
 });
