@@ -494,10 +494,22 @@ pre.prettyprint {
 .btn-bottom-right
 { 
     position: fixed; 
-    bottom: 15px; 
+    bottom: 25px; 
     right: 15px; 
 }
 
+.btn-top-right {
+    position: fixed; 
+    top: 60px; 
+    right: 15px; 
+}
+
+.badge-bottom-right
+{ 
+    position: fixed; 
+    bottom: 3px; 
+    right: 25px; 
+}
 .btn-circle.btn-xl {
   width: 70px;
   height: 70px;

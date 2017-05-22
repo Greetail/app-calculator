@@ -29,7 +29,9 @@ var app = new Vue({
         quote: {
             user: this.newUser,
             features: []
-        }
+        },
+        total: 10000,
+        rate: 50
     },
     methods: {
         addQuote: function () {
@@ -48,9 +50,11 @@ var app = new Vue({
         addFeatureToQuote: function(feature){
             this.quote.user = this.newUser;
             this.quote.features.push(feature);
+            this.total = this.total + (feature.hours * this.rate);
         },
         removeFeatureFromQuote: function(feature){
             this.quote.features.splice(this.quote.features.indexOf(feature), 1);
+            this.total = this.total - (feature.hours * this.rate);
         }
     }
 });
