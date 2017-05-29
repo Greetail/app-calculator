@@ -31,18 +31,6 @@
   <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900" rel="stylesheet">
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    crossorigin="anonymous">
-
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-    crossorigin="anonymous">
-
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-    crossorigin="anonymous"></script>
 
   <script src="https://unpkg.com/vue"></script>
   <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
@@ -163,20 +151,66 @@
 
         </div>
       </div>
-      <button type="button" class="btn btn-success btn-bottom-right btn-circle btn-xl" v-on:click="addQuote()">
+      <button type="button" class="btn btn-success btn-bottom-right btn-circle btn-xl" data-toggle="modal" data-target="#save-quote-modal">
                 <i class="fa fa-check faa-pulse animated" aria-hidden="true"></i>
             </button>
-      <label class="badge badge-bottom-right btn-circle">
-                {{ '$' + total.toFixed(0).replace(/(\d)(?=(\d{3})+(?:\.\d+)?$)/g, "$1,") }}
-            </label>
+      <label class="badge badge-bottom-right btn-circle">{{ '$' + total.toFixed(0).replace(/(\d)(?=(\d{3})+(?:\.\d+)?$)/g, "$1,") }}</label>
     </div>
 
     <hr>
 
+    <div id="save-quote-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">Save your greetail quote</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="well">
+                  <div id="loginForm" novalidate="novalidate">
+                    <div class="form-group">
+                      <label for="username" class="control-label">Email</label>
+                      <input v-model="shopper.email" type="text" class="form-control" id="Email" name="Email" value="" required="" title="Please enter you Email"
+                        placeholder="example@gmail.com">
+                      <span class="help-block"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="name" class="control-label">name</label>
+                      <input v-model="shopper.name" class="form-control" id="name" name="name" value="" required="" title="Please enter your name">
+                      <span class="help-block"></span>
+                    </div>
+                    <button v-on:click="addQuote()" data-dismiss="modal" class="btn btn-success btn-block">Get it!</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <p class="lead">Get your quote now <span class="text-success">FREE</span></p>
+                <ul class="list-unstyled" style="line-height: 2">
+                  <li><span class="fa fa-check text-success"></span> Get Quote via email</li>
+                  <li><span class="fa fa-check text-success"></span> Get Unique link</li>
+                  <li><span class="fa fa-check text-success"></span> Save to you favorites</li>
+                  <li><span class="fa fa-check text-success"></span> no strings attached</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer>
       <p>&copy; Greetail inc 2017</p>
     </footer>
+
   </div>
+
+
+
+
+
   <!-- /container -->
   <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
   <script>

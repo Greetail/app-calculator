@@ -9,21 +9,21 @@ var config = {
 };
 
 
-$(function() {
-    
-  $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
-    }
-  });
-  
+$(function () {
+
+    $('a[href*=#]:not([href=#])').click(function () {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+                return false;
+            }
+        }
+    });
+
 });
 
 firebase.initializeApp(config);
@@ -31,7 +31,15 @@ firebase.initializeApp(config);
 var sectionsRef = firebase.database().ref('sections');
 var quotesRef = firebase.database().ref('quotes');
 
+var shopper = {
+    name: '',
+    email: ''
+}
 
+var quote = {
+    user: this.shopper,
+    features: []
+}
 
 //vuejs section
 var app = new Vue({
@@ -40,14 +48,8 @@ var app = new Vue({
         sections: sectionsRef
     },
     data: {
-        newUser: {
-            name: '',
-            email: ''
-        },
-        quote: {
-            user: this.newUser,
-            features: []
-        },
+        shopper,
+        quote,
         total: 10000,
         rate: 50
     },
@@ -58,24 +60,24 @@ var app = new Vue({
                 "quote": this.quote
             });
         },
-        manageQuoteFeatures: function(feature){
+        manageQuoteFeatures: function (feature) {
             if (feature.selected) {
                 this.addFeatureToQuote(feature);
             } else {
                 this.removeFeatureFromQuote(feature);
             }
         },
-        addFeatureToQuote: function(feature){
-            this.quote.user = this.newUser;
+        addFeatureToQuote: function (feature) {
+            this.quote.user = this.shopper;
             this.quote.features.push(feature);
             this.total = this.total + (feature.hours * this.rate);
         },
-        removeFeatureFromQuote: function(feature){
+        removeFeatureFromQuote: function (feature) {
             this.quote.features.splice(this.quote.features.indexOf(feature), 1);
             this.total = this.total - (feature.hours * this.rate);
         },
-        formatNumber: function(total){
-            total.toLocaleString('en-US',  { style: 'currency', currency: 'USD' });
+        formatNumber: function (total) {
+            total.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
         }
     }
 });
