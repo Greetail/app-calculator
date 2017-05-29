@@ -80,6 +80,7 @@
             <hr class="star-light">
             <p class="skills">Select features, see the price updated</p>
             <p class="skills">Scroll down to get started</p>
+            <hr class="star-light">
             <i class="fa fa-arrow-down fa-5x faa-bounce animated" aria-hidden="true"></i>
           </div>
         </div>
@@ -121,13 +122,13 @@
                           <h3 class="name">{{feature.name}}</h3>
                           <p class="text-center">{{feature.description}}</p>
                           <div class="btn btn-lg btn-block" v-on:click="feature.selected = !feature.selected, manageQuoteFeatures(feature);">
-                            <i class="fa fa-check-circle-o fa-2x faa-shake animated-hover" v-if="!feature.selected"></i>
+                            <i class="fa fa-check-circle-o fa-2x faa-pulse animated" v-if="!feature.selected"></i>
                             <i class="fa trash-o fa-trash-o  fa-2x" v-if="feature.selected"></i>
                           </div>
                         </div>
                         <div class="footer">
                           <button class="btn btn-simple" onclick="rotateCard(this)">
-                                                        <i class="fa fa-mail-forward faa-passing animated-hover"></i> Tell me more
+                                                        <i class="fa fa-mail-forward"></i> Tell me more
                                                     </button>
                         </div>
                       </div>
