@@ -41,6 +41,8 @@ var quote = {
     features: []
 }
 
+var quoteId = '';
+
 //vuejs section
 var app = new Vue({
     el: '#app',
@@ -51,7 +53,8 @@ var app = new Vue({
         shopper,
         quote,
         total: 10000,
-        rate: 50
+        rate: 50,
+        quoteId: ''
     },
     methods: {
         addQuote: function () {
@@ -59,6 +62,8 @@ var app = new Vue({
             newQuote.set({
                 "quote": this.quote
             });
+            //retrieve the newly created quote id
+            this.quoteId = newQuote.key;
         },
         manageQuoteFeatures: function (feature) {
             if (feature.selected) {
@@ -68,7 +73,6 @@ var app = new Vue({
             }
         },
         addFeatureToQuote: function (feature) {
-            this.quote.user = this.shopper;
             this.quote.features.push(feature);
             this.total = this.total + (feature.hours * this.rate);
         },
@@ -78,6 +82,11 @@ var app = new Vue({
         },
         formatNumber: function (total) {
             total.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+        }
+    },
+    computed: {
+        quoteUrl: function() {
+            return 'https://greetail.co/app-calculator/' + this.quoteId;
         }
     }
 });

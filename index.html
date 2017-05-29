@@ -182,7 +182,7 @@
                       <input v-model="shopper.name" class="form-control" id="name" name="name" value="" required="" title="Please enter your name">
                       <span class="help-block"></span>
                     </div>
-                    <button v-on:click="addQuote()" data-dismiss="modal" class="btn btn-success btn-block">Get it!</button>
+                    <button v-on:click="addQuote()" class="btn btn-success btn-block">Get it!</button>
                   </div>
                 </div>
               </div>
@@ -194,6 +194,12 @@
                   <li><span class="fa fa-check text-success"></span> Save to you favorites</li>
                   <li><span class="fa fa-check text-success"></span> no strings attached</li>
                 </ul>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <label>Your unique quote link is: </label>
+                <a :href="quoteUrl">{{quoteId}}</a>
               </div>
             </div>
           </div>
