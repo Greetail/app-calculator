@@ -110,7 +110,7 @@
                           <h3 class="name">{{feature.name}}</h3>
                           <p class="text-center">{{feature.description}}</p>
                           <div class="btn btn-lg btn-block" v-on:click="feature.selected = !feature.selected, manageQuoteFeatures(feature);">
-                            <i class="fa fa-check-circle-o fa-2x faa-pulse animated" v-if="!feature.selected"></i>
+                            <i class="fa fa-check-circle-o fa-2x faa-pulse animated-hover" v-if="!feature.selected"></i>
                             <i class="fa trash-o fa-trash-o  fa-2x" v-if="feature.selected"></i>
                           </div>
                         </div>
@@ -152,7 +152,7 @@
         </div>
       </div>
       <button type="button" class="btn btn-success btn-bottom-right btn-circle btn-xl" data-toggle="modal" data-target="#save-quote-modal">
-                <i class="fa fa-check faa-pulse animated" aria-hidden="true"></i>
+                <i class="fa fa-check faa-pulse animated-hover" aria-hidden="true"></i>
             </button>
       <label class="badge badge-bottom-right btn-circle">{{ '$' + total.toFixed(0).replace(/(\d)(?=(\d{3})+(?:\.\d+)?$)/g, "$1,") }}</label>
     </div>
