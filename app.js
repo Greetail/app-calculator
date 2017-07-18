@@ -1,11 +1,11 @@
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyAobWUy0Pr2mOsfkT2zGplFVp1IauzVKJQ",
+    apiKey: "YOUR_API_KEY",
     authDomain: "greetail-calculator.firebaseapp.com",
     databaseURL: "https://greetail-calculator.firebaseio.com",
     projectId: "greetail-calculator",
     storageBucket: "greetail-calculator.appspot.com",
-    messagingSenderId: "714879421168"
+    messagingSenderId: "YOUR_MESSENGER_ID"
 };
 
 
